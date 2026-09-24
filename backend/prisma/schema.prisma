@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum UserRole {
+  CITIZEN
+  FIELD_WORKER
+  OFFICER
+  DEPARTMENT_ADMIN
+  CITY_ADMIN
+  SUPER_ADMIN
+}
+
+enum IncidentStatus {
+  REPORTED
+  AI_PROCESSING
+  UNDER_REVIEW
+  VERIFIED
+  ASSIGNED
+  IN_PROGRESS
+  RESOLVED
+  CITIZEN_VERIFICATION
+  CLOSED
+  REJECTED
+  REOPENED
+  CANCELLED
+}
+
+enum IncidentPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+// ==========================================
+// MODELS (Phase 2 — Foundation tables only)
+// ==========================================
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  fullName     String
+  phone        String?
+  role         UserRole @default(CITIZEN)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  incidentsReported Incident[] @relation("ReportedBy")
+
+  @@map("users")
+}
+
+model Department {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  incidents Incident[]
+
+  @@map("departments")
+}
+
+model IncidentCategory {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  incidents Incident[]
+
+  @@map("incident_categories")
+}
+
+model Incident {
+  id             String           @id @default(uuid())
+  incidentNumber String           @unique
+  description    String
+  status         IncidentStatus   @default(REPORTED)
+  priority       IncidentPriority @default(MEDIUM)
+  priorityScore  Float?
+
+  latitude       Float
+  longitude      Float
+
+  aiCategory     String?
+  aiConfidence   Float?
+  aiSeverity     String?
+
+  reportedById   String
+  reportedBy     User              @relation("ReportedBy", fields: [reportedById], references: [id])
+
+  categoryId     String?
+  category       IncidentCategory? @relation(fields: [categoryId], references: [id])
+
+  departmentId   String?
+  department     Department?       @relation(fields: [departmentId], references: [id])
+
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@map("incidents")
+}
