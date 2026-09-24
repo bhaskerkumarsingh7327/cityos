@@ -26,7 +26,8 @@ export function createApp(): Application {
   );
   app.use(express.json({ limit: "5mb" }));
   app.use(express.urlencoded({ extended: true }));
-  app.use(generalRateLimiter);
+  
+//   app.use(generalRateLimiter);
 
   // --- Logging ---
   app.use(morgan(env.NODE_ENV === "production" ? "combined" : "dev"));
