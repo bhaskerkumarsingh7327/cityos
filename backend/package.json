@@ -18,11 +18,12 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@prisma/client": "^5.22.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "helmet": "^7.1.0",
     "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
     "morgan": "^1.10.0",
     "socket.io": "^4.8.0",
     "zod": "^3.23.8"
@@ -37,6 +38,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.3",
+    "prisma": "^5.22.0",
     "supertest": "^7.0.0",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.16.2",

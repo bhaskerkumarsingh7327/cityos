@@ -1,0 +1,25 @@
+# CityOS — Docker Compose Foundation (Phase 1)
+# Real services (postgres, redis, minio) added in later phases.
+
+version: "3.9"
+
+networks:
+  cityos-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:
+
+services:
+  foundation-check:
+    image: alpine:3.20
+    container_name: cityos-foundation-check
+    command: ["sh", "-c", "echo 'CityOS Docker foundation OK' && sleep 2"]
+    networks:
+      - cityos-network
+
+  # Phase 2 -> postgres (PostGIS) — uncomment later
+  # Phase 8 -> redis — uncomment later
+  # Phase 7+ -> minio — uncomment later
