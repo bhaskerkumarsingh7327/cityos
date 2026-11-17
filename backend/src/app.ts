@@ -17,9 +17,9 @@ export function createApp(): Application {
   const app = express();
 
   // --- Security & core middleware ---
-  app.use(helmet());
+  app.use((helmet as any)());
   app.use(
-    cors({
+    (cors as any)({
       origin: env.CORS_ORIGIN,
       credentials: true,
     }),
@@ -30,7 +30,7 @@ export function createApp(): Application {
   app.use(generalRateLimiter);
 
   // --- Logging ---
-  app.use(morgan(env.NODE_ENV === "production" ? "combined" : "dev"));
+  app.use((morgan as any)(env.NODE_ENV === "production" ? "combined" : "dev"));
 
   // --- Routes ---
   app.use(env.API_BASE_PATH, apiRouter);
