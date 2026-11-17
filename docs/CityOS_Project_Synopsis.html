@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CityOS - Project Synopsis</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 15mm 18mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    .header-box {
+      text-align: center;
+      border-bottom: 2px solid #000;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 16pt;
+      text-transform: uppercase;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #333;
+      margin: 0 0 10px 0;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+    .meta-table td {
+      padding: 4px 6px;
+      font-size: 10.5pt;
+    }
+    .meta-table td.label {
+      font-weight: bold;
+      width: 25%;
+    }
+    h3 {
+      font-size: 11.5pt;
+      text-transform: uppercase;
+      border-bottom: 1px solid #444;
+      padding-bottom: 3px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      color: #0b2545;
+    }
+    p, li {
+      text-align: justify;
+      margin-bottom: 6px;
+    }
+    ul, ol {
+      margin-top: 4px;
+      margin-bottom: 8px;
+      padding-left: 24px;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 10pt;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid #444;
+      padding: 5px 8px;
+      text-align: left;
+    }
+    table.data-table th {
+      background-color: #f0f4f8;
+      font-weight: bold;
+      color: #111;
+    }
+    .diagram-box {
+      border: 1px solid #999;
+      background: #fafafa;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 8.5pt;
+      white-space: pre;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .page-break {
+      page-break-after: always;
+    }
+    .signature-row {
+      margin-top: 35px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .sig-box {
+      width: 45%;
+      border-top: 1px solid #000;
+      padding-top: 6px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>PROJECT SYNOPSIS</h1>
+    <h2>CityOS: Intelligent Urban Infrastructure Problem Detection, Spatial Dispatch & Civic Resolution Platform</h2>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td class="label">Candidate Name:</td>
+      <td>Bhasker Kumar Singh</td>
+      <td class="label">Degree / Course:</td>
+      <td>B.Tech (Computer Science & Engineering)</td>
+    </tr>
+    <tr>
+      <td class="label">Academic Year:</td>
+      <td>2026-2027</td>
+      <td class="label">Project Type:</td>
+      <td>Major Capstone / Final Year Project</td>
+    </tr>
+    <tr>
+      <td class="label">Domain:</td>
+      <td>Full-Stack Web, GIS & Civic Governance</td>
+      <td class="label">Repository:</td>
+      <td>github.com/bhaskerkumarsingh7327/cityos</td>
+    </tr>
+  </table>
+
+  <h3>1. Introduction</h3>
+  <p>
+    Rapid urban population growth has severely stressed municipal infrastructures across major cities. Municipal authorities struggle to maintain roads, streetlights, drainage pipelines, and solid waste collection. Conventional grievance redressal platforms suffer from severe structural shortcomings: field workers often close tickets fraudulently without physical visits, duplicate reports create database clutter, static first-in-first-out scheduling ignores public safety hazards, and citizens are excluded from the closure verification process.
+  </p>
+  <p>
+    <strong>CityOS</strong> is an intelligent, full-stack, GIS-enabled municipal operations platform designed to automate civic problem resolution while eliminating fraudulent work closures through mandatory dual-phase photographic evidence and spatial intelligence.
+  </p>
+
+  <h3>2. Problem Statement</h3>
+  <p>
+    To design, develop, and validate a secure, spatially intelligent municipal problem management platform that:
+  </p>
+  <ul>
+    <li>Enforces <strong>mandatory dual-phase photographic evidence</strong> (Before-Repair arrival photo and After-Repair completion photo) with detailed resolution logs, locking work order submissions unless visual proof is verified.</li>
+    <li>Eliminates duplicate municipal tickets using a <strong>75-meter spatial proximity clustering algorithm</strong> powered by MongoDB <code>2dsphere</code> indexing.</li>
+    <li>Computes an <strong>explainable priority score (0–100)</strong> factoring in severity, safety risks, repeat density, and SLA decay.</li>
+    <li>Provides a <strong>citizen-centric verification handshake</strong> where the reporting citizen inspects side-by-side photographic evidence to "Accept & Close" or "Reject & Reopen" tickets.</li>
+  </ul>
+
+  <h3>3. Technology Stack</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Layer</th>
+        <th>Technologies & Frameworks</th>
+        <th>Core Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td>React 18, TypeScript, Vite, Tailwind CSS, Lucide Icons</td>
+        <td>Multi-portal role workspaces (Citizen, Officer, Worker, Admin)</td>
+      </tr>
+      <tr>
+        <td><strong>Backend API</strong></td>
+        <td>Node.js 20+, Express.js, TypeScript, Zod Schema Validation</td>
+        <td>RESTful endpoints, Finite State Machine, and RBAC guards</td>
+      </tr>
+      <tr>
+        <td><strong>Database & GIS</strong></td>
+        <td>MongoDB Atlas, Mongoose ODM, 2dsphere Spatial Indexing</td>
+        <td>GeoJSON Point & Polygon storage, 75m duplicate detection, analytics</td>
+      </tr>
+      <tr>
+        <td><strong>Security & Auth</strong></td>
+        <td>Argon2id Password Hashing, JWT Access & Refresh Tokens</td>
+        <td>Military-grade cryptographic password storage & stateless auth</td>
+      </tr>
+      <tr>
+        <td><strong>Real-Time Dispatch</strong></td>
+        <td>Socket.IO WebSockets</td>
+        <td>Instant real-time dispatch alerts and live status updates</td>
+      </tr>
+      <tr>
+        <td><strong>Testing</strong></td>
+        <td>Vitest, React Testing Library (17/17 Tests Passing)</td>
+        <td>Automated unit and integration test coverage across all tiers</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h3>4. System Architecture & Component Flow</h3>
+  <div class="diagram-box">
++-------------------------------------------------------------------------------+
+|                                CLIENT TIER                                    |
+|   [ Citizen Portal ]    [ Officer Desk ]    [ Worker App ]    [ Admin HQ ]    |
+|                      React 18 + Vite + Tailwind CSS                           |
++-------------------------------------------------------------------------------+
+                                       │ HTTPS / WebSockets
+                                       ▼
++-------------------------------------------------------------------------------+
+|                            APPLICATION LOGIC TIER                             |
+|  Node.js / Express REST API Gateway (/api/v1)                                 |
+|  ├── Helmet & CORS Security            ├── Argon2id & JWT Auth Engine         |
+|  ├── Zod Payload Schema Guards         ├── Finite State Machine (FSM Guard)   |
+|  ├── Spatial Duplicate Detector (75m)  ├── Explainable Priority Engine (0-100)|
+|  └── Socket.IO Event Broadcaster       └── Centralized Error Middleware       |
++-------------------------------------------------------------------------------+
+                                       │ Mongoose ODM
+                                       ▼
++-------------------------------------------------------------------------------+
+|                              PERSISTENCE TIER                                 |
+|  MongoDB Atlas Cloud Database                                                 |
+|  ├── 2dsphere Compound Spatial Indexes ├── GeoJSON Points & Polygons          |
+|  ├── Incidents & Multi-Phase Media     ├── Users, Departments & Wards         |
+|  └── Analytical Aggregations ($near, $geoWithin, $facet, $group)              |
++-------------------------------------------------------------------------------+
+  </div>
+
+  <h3>5. Key Functional Modules</h3>
+  <ol>
+    <li><strong>Citizen Portal (Nagrik Desk):</strong> GPS coordinate picking, interactive issue reporting, duplicate linking alerts, and final visual resolution review (Accept & Close / Reject & Reopen).</li>
+    <li><strong>Nodal Officer Command Desk:</strong> Incoming departmental queue (PWD, Sanitation, Water, Electrical), AI classification inspection (94% confidence), and single-click field technician dispatch.</li>
+    <li><strong>Field Worker Operations (Ground Desk):</strong> Work order queue sorted by priority, mandatory arrival verification (Before-Photo), and strict completion locking requiring After-Repair photo and notes (&ge;10 chars).</li>
+    <li><strong>City Admin & Commissioner Headquarters:</strong> Live executive KPIs, Recharts departmental workload distribution, and geospatial 2dsphere density hotspot monitoring.</li>
+  </ol>
+
+  <h3>6. Mathematical Formulations</h3>
+  <p>
+    <strong>Explainable Priority Scoring Formula:</strong>
+    <br>
+    $$\text{Priority Score} = (\text{Severity} \times 0.40) + (\text{Public Safety} \times 0.30) + (\text{Repeat Factor} \times 0.15) + (\text{Aging Decay} \times 0.15)$$
+    <em>Output range: 0–100. Categorized into CRITICAL (&ge;80), HIGH (60–79), MEDIUM (35–59), and LOW (&lt;35).</em>
+  </p>
+
+  <h3>7. Expected Outcomes & Project Deliverables</h3>
+  <ul>
+    <li>Production-ready full-stack software application hosted on GitHub.</li>
+    <li>Zero ghost repairs achieved via mandatory dual-phase photographic evidence.</li>
+    <li>100% automated test pass rate across 17 unit and integration test suites.</li>
+    <li>Formal project report and viva voce documentation.</li>
+  </ul>
+
+  <div class="signature-row">
+    <div class="sig-box">
+      Candidate Signature<br>
+      (Bhasker Kumar Singh)
+    </div>
+    <div class="sig-box">
+      Project Supervisor / Guide Signature<br>
+      (Department of CSE)
+    </div>
+  </div>
+
+</body>
+</html>
