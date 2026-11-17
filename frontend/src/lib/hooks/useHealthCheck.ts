@@ -4,6 +4,8 @@ import { apiRequest } from "@/lib/apiClient";
 interface HealthData {
   status: string;
   service: string;
+  version: string;
+  database?: string;
   timestamp: string;
   uptimeSeconds: number;
 }

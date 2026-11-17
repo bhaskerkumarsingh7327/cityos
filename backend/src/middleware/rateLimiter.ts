@@ -1,8 +1,8 @@
 import rateLimit from "express-rate-limit";
 
 /**
- * General-purpose API rate limiter.
- * Stricter limiters (e.g. for /auth/login) will be added in Phase 3.
+ * General API rate limiter to protect public endpoints
+ * from abuse, brute-force attempts, and excessive bursts.
  */
 export const generalRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

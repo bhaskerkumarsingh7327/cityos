@@ -1,8 +1,9 @@
 import type { Response } from "express";
 
 /**
- * Enforces the consistent success/error response shape defined in the
- * CityOS API design spec (section 35).
+ * Standardized API response format for all JSON endpoints:
+ * Success: { success: true, data: T, message: string }
+ * Error:   { success: false, error: { code, message, details } }
  */
 export function sendSuccess<T>(res: Response, data: T, message = "Success", statusCode = 200) {
   return res.status(statusCode).json({

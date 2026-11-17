@@ -1,20 +1,18 @@
 import { Router } from "express";
+import analyticsRoutes from "@/routes/analytics.routes.js";
+import authRoutes from "@/routes/auth.routes.js";
 import healthRoutes from "@/routes/health.routes.js";
+import incidentRoutes from "@/routes/incident.routes.js";
+import mapRoutes from "@/routes/map.routes.js";
+import workerRoutes from "@/routes/worker.routes.js";
 
-/**
- * Root router mounted at env.API_BASE_PATH (/api/v1).
- * Future phases will add:
- *   /auth        (Phase 3)
- *   /users       (Phase 3)
- *   /incidents   (Phase 4)
- *   /departments (Phase 4)
- *   /workers     (Phase 10)
- *   /analytics   (Phase 11)
- *   /notifications (Phase 6)
- *   /maps        (Phase 5)
- */
 const router = Router();
 
 router.use("/health", healthRoutes);
+router.use("/auth", authRoutes);
+router.use("/incidents", incidentRoutes);
+router.use("/maps", mapRoutes);
+router.use("/workers", workerRoutes);
+router.use("/analytics", analyticsRoutes);
 
 export default router;

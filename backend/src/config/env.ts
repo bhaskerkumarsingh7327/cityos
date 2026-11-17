@@ -2,9 +2,8 @@ import "dotenv/config";
 import { z } from "zod";
 
 /**
- * Centralized, validated environment configuration.
- * Fail fast at startup if required variables are missing/invalid,
- * instead of discovering it deep inside a request handler later.
+ * Validated environment configuration.
+ * Validates required configuration keys at startup using Zod.
  */
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
@@ -12,10 +11,10 @@ const envSchema = z.object({
   API_BASE_PATH: z.string().default("/api/v1"),
   CORS_ORIGIN: z.string().default("http://localhost:5173"),
 
-  // Phase 2+ (optional for now, validated loosely so Phase 1 can boot without them)
-  DATABASE_URL: z.string().optional(),
+  // Database Connection
+  MONGODB_URI: z.string().default("mongodb://localhost:27017/cityos"),
 
-  // Phase 3+ (optional for now)
+  // Authentication Secrets
   JWT_ACCESS_SECRET: z.string().optional(),
   JWT_REFRESH_SECRET: z.string().optional(),
 });
@@ -23,7 +22,9 @@ const envSchema = z.object({
 const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success) {
-  console.error("❌ Invalid environment configuration:");
+  // eslint-disable-next-line no-console
+  console.error("Configuration Error: Invalid environment variables:");
+  // eslint-disable-next-line no-console
   console.error(parsed.error.flatten().fieldErrors);
   process.exit(1);
 }

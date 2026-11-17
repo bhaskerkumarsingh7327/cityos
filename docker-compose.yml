@@ -1,6 +1,3 @@
-# CityOS — Docker Compose Foundation (Phase 1)
-# Real services (postgres, redis, minio) added in later phases.
-
 version: "3.9"
 
 networks:
@@ -8,18 +5,30 @@ networks:
     driver: bridge
 
 volumes:
-  postgres-data:
+  mongodb-data:
   redis-data:
-  minio-data:
 
 services:
-  foundation-check:
-    image: alpine:3.20
-    container_name: cityos-foundation-check
-    command: ["sh", "-c", "echo 'CityOS Docker foundation OK' && sleep 2"]
+  mongodb:
+    image: mongo:7.0
+    container_name: cityos-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: cityos
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
     networks:
       - cityos-network
 
-  # Phase 2 -> postgres (PostGIS) — uncomment later
-  # Phase 8 -> redis — uncomment later
-  # Phase 7+ -> minio — uncomment later
+  redis:
+    image: redis:7-alpine
+    container_name: cityos-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - cityos-network
