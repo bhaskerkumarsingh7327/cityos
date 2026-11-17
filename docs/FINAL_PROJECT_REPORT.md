@@ -4,21 +4,21 @@
 **Submitted in partial fulfillment of the requirements for the award of the degree of**  
 ### BACHELOR OF TECHNOLOGY  
 **in**  
-### COMPUTER SCIENCE & ENGINEERING  
+### COMPUTER SCIENCE & TECHNOLOGY  
 
 ---
 
 ## CERTIFICATE OF AUTHENTICITY
 
-This is to certify that the project entitled **"CityOS: Intelligent Urban Infrastructure Problem Detection, Spatial Dispatch & Civic Resolution Platform"** submitted by **Bhasker Kumar Singh** in partial fulfillment of the requirements for the award of the degree of **Bachelor of Technology in Computer Science & Engineering** is an authentic record of the work carried out under guidance and supervision.
+This is to certify that the project entitled **"CityOS: Intelligent Urban Infrastructure Problem Detection, Spatial Dispatch & Civic Resolution Platform"** submitted by **Bhasker Kumar Singh (Roll No. 236063)** in partial fulfillment of the requirements for the award of the degree of **Bachelor of Technology in Computer Science & Technology** is an authentic record of the work carried out under guidance and supervision.
 
 The results embodied in this report have not been submitted to any other University or Institute for the award of any degree or diploma.
 
 **Project Guide / Supervisor:**  
-Internal Guide, Department of Computer Science & Engineering  
+Internal Guide, Department of Computer Science & Technology  
 
 **Head of Department:**  
-HOD, Department of Computer Science & Engineering  
+HOD, Department of Computer Science & Technology  
 
 **External Examiner:**  
 Date of Viva-Voce Examination: _______________  
@@ -30,14 +30,15 @@ Date of Viva-Voce Examination: _______________
 I hereby declare that the project entitled **"CityOS: Intelligent Urban Infrastructure Problem Detection, Spatial Dispatch & Civic Resolution Platform"** is my original work. All literature, design methodologies, architectural patterns, and code implementations presented herein are true to the best of my knowledge and have been referenced appropriately.
 
 **Student Name:** Bhasker Kumar Singh  
-**Department:** Computer Science & Engineering  
+**Roll No.:** 236063  
+**Department:** Computer Science & Technology  
 **Academic Year:** 2026-2027  
 
 ---
 
 ## ACKNOWLEDGEMENT
 
-I express my deepest gratitude to our Project Supervisor and the faculty members of the Department of Computer Science & Engineering for their continuous encouragement, technical critique, and intellectual guidance throughout the design and development of **CityOS**.
+I express my deepest gratitude to our Project Supervisor and the faculty members of the Department of Computer Science & Technology for their continuous encouragement, technical critique, and intellectual guidance throughout the design and development of **CityOS**.
 
 I am also thankful to our Department Head and Institution administration for providing the computational laboratory facilities and resources that made the testing, geospatial indexing, and deployment of this full-stack municipal platform possible.
 
@@ -452,3 +453,4 @@ The platform was subjected to rigorous unit and integration testing using Vitest
 5. **Redmon, J., and Farhadi, A.**, "YOLO: Real-Time Object Detection for Urban Damage Assessment," *IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 2018.
 6. **React Development Team**, "React 18 & Concurrent Rendering Patterns," *Meta Open Source Documentation*, 2024.
 7. **Ministry of Housing and Urban Affairs (MoHUA), Government of India**, "Smart Cities Mission Guidelines and Civic Governance Standards," 2022.
+

@@ -1,7 +1,9 @@
 # Project Synopsis: CityOS — Intelligent Urban Problem Solving Platform
 
 **Project Title:** CityOS: Intelligent Urban Infrastructure Problem Detection, Spatial Dispatch & Civic Resolution Platform  
-**Degree/Course:** Bachelor of Technology / Computer Science & Engineering (Final Year Project)  
+**Candidate Name:** Bhasker Kumar Singh  
+**Roll No.:** 236063  
+**Degree/Course:** Bachelor of Technology in Computer Science & Technology  
 **Academic Year:** 2026-2027  
 
 ---
