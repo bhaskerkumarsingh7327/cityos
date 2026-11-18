@@ -1,6 +1,12 @@
-# CityOS — Intelligent Urban Problem Solving Platform
+<p align="center">
+  <img src="docs/logo.png" alt="CityOS Logo" width="160" height="160" style="border-radius: 28px;" />
+</p>
 
-> A full-stack, AI-augmented, GIS-powered civic infrastructure problem reporting, prioritization, dispatch, and resolution platform.
+<h1 align="center">CityOS — Intelligent Urban Problem Solving Platform</h1>
+
+<p align="center">
+  <em>A full-stack, AI-augmented, GIS-powered civic infrastructure problem reporting, prioritization, dispatch, and resolution platform.</em>
+</p>
 
 ---
 
