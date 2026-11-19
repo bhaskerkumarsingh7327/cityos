@@ -36,6 +36,7 @@ import { api } from "@/services/api";
 import { useAuthStore } from "@/store/useAuthStore";
 import type { Incident, IncidentPriority, IncidentStatus, UserRole } from "@/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import logoImage from "@/assets/logo.png";
 
 // Realistic Seed / Offline Fallback Incidents so all 4 portals are immediately interactive
 const INITIAL_DEMO_INCIDENTS: Incident[] = [
@@ -610,9 +611,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/logo.svg"
+              src={logoImage}
               alt="CityOS Logo"
-              className="w-9 h-9 rounded-lg shadow-sm object-contain"
+              className="w-10 h-10 rounded-xl shadow-md object-cover border border-slate-200 ring-1 ring-slate-900/5"
             />
             <div>
               <div className="flex items-center gap-2">
